@@ -1,0 +1,19 @@
+Package: claremontrun
+Title: X-Men Data from the Claremont Run Project
+Version: 0.1.0
+Authors@R: 
+    person(given = "Malcolm",
+           family = "Barrett",
+           role = c("aut", "cre"),
+           email = "malcolmbarrett@gmail.com",
+           comment = c(ORCID = "0000-0003-0299-5825"))
+Description: Data from the Claremont Run project (<http://www.claremontrun.com/>), a collection of data about 
+  Chris Claremont's time on the X-Men books (1975-1991). claremontrun includes 7 data sets about Claremont's run: `character_visualization`, 
+  `characters`, `comic_bechdel`, `covers`, `issue_collaborators`, `location`, and `xmen_bechdel`. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 2.10)
+Imports: 
+    tibble
+RoxygenNote: 7.0.0
