@@ -1,4 +1,4 @@
-#' Whether or not an issue of Uncanny X-Men met the Bechdel test
+#' Data on covers of issues of Uncanny X-Men
 #'
 #' `covers` is a `tibble` that that contains data on the covers of the issues
 #' that occurred during the Claremont run. This includes the artist, any text on

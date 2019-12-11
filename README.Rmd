@@ -9,7 +9,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%",
+  dpi = 320
 )
 ```
 
@@ -18,37 +19,63 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-claremontrun is an R data package that provides data from the [Claremont Run]() project.
+claremontrun is an R data package that provides data from the [Claremont Run](http://www.claremontrun.com/) project. This project collects data on [Chris Claremont's](https://www.wikiwand.com/en/Chris_Claremont) iconic run on [Uncanny X-Men](https://www.wikiwand.com/en/Uncanny_X-Men).
 
 ## Installation
 
-You can install the released version of claremontrun from [CRAN](https://CRAN.R-project.org) with:
+claremontrun is not currently on CRAN. You can install the development version of claremontrun from GitHub with:
 
 ``` r
-install.packages("claremontrun")
+# if needed
+# install.packages("remotes")
+remotes::install_github("malcolmbarrett/claremontrun")
 ```
+
+## Data
+
+claremontrun includes 7 data sets relevant to the Claremont run:
+
+* `character_visualization`, counts of character speech, thought, narrative, or visual depictions
+* `characters`, descriptions of character actions
+* `comic_bechdel`, whether or not an issue of another (non-X-Men) comic series met the Bechdel test
+* `covers`, data on covers of issues of Uncanny X-Men
+* `issue_collaborators`, data about other collaborators on each issue, such as editors
+* `location`, locations that appear in each issue
+* `xmen_bechdel`, whether or not an issue of Uncanny X-Men met the Bechdel test
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
+```{r}
 library(claremontrun)
-## basic example code
+library(tidyverse)
+darkblue <- "#0072B2"
+theme_minimal_vline <- function() {
+  list(
+    theme_minimal(14),
+    theme(panel.grid.major.y = element_blank(), panel.grid.minor = element_blank())
+  )
+}
+
+locations %>%
+  drop_na(location) %>%
+  count(location, sort = TRUE) %>%
+  head() %>%
+  ggplot(aes(x = n, y = fct_rev(fct_inorder(location)))) +
+    geom_col(fill = darkblue) +
+    theme_minimal_vline() +
+    theme(axis.title.y = element_blank()) +
+    ggtitle("Locations of X-Men issues during the Claremont run")
+
+characters %>%
+  group_by(issue) %>%
+  summarise(n_tears = sum(visible_tears_number_of_panels)) %>%
+  mutate(n_tears = replace_na(n_tears, 0)) %>%
+  arrange(desc(n_tears)) %>%
+  head(10) %>%
+    ggplot(aes(x = n_tears, y = fct_rev(fct_inorder(as.character(issue))))) +
+    geom_col(fill = darkblue) +
+    theme_minimal_vline() +
+    labs(y = "issue", x = "panels that included tears") +
+    ggtitle("Number of panels that included tears")
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!

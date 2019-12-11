@@ -3,7 +3,7 @@
 \docType{data}
 \name{covers}
 \alias{covers}
-\title{Whether or not an issue of Uncanny X-Men met the Bechdel test}
+\title{Data on covers of issues of Uncanny X-Men}
 \format{A `tibble` with 184 rows and 6 variables: `issue`, the issue number,
   `cover_artist`, the artist of the cover, `narrative_captions`, non-dialogue
   text included on the cover, `characters_visualized`, the characters shown

@@ -10,4 +10,4 @@ locations <- locations %>%
   remove_empty("rows") %>%
   fill(issue)
 
-usethis::use_data(location, overwrite = TRUE)
+usethis::use_data(locations, overwrite = TRUE)
