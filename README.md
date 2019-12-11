@@ -69,7 +69,7 @@ locations %>%
     geom_col(fill = darkblue) +
     theme_minimal_vline() +
     theme(axis.title.y = element_blank()) +
-    ggtitle("Locations of X-Men issues during the Claremont run")
+    ggtitle("Locations of X-Men issues during the\nClaremont run")
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
