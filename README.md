@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# claremontrun
+# claremontrun <img src='man/figures/logo.png' align="right" height="130" />
 
 <!-- badges: start -->
 
@@ -45,14 +45,14 @@ claremontrun includes 7 data sets relevant to the Claremont run:
 ``` r
 library(claremontrun)
 library(tidyverse)
-#> ── Attaching packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
-#> ✔ ggplot2 3.2.1.9000     ✔ purrr   0.3.3     
-#> ✔ tibble  2.1.3          ✔ dplyr   0.8.3     
-#> ✔ tidyr   1.0.0          ✔ stringr 1.4.0     
-#> ✔ readr   1.3.1          ✔ forcats 0.4.0
-#> ── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-#> ✖ dplyr::filter() masks stats::filter()
-#> ✖ dplyr::lag()    masks stats::lag()
+#> ── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+#> ✓ ggplot2 3.3.0.9000     ✓ purrr   0.3.3     
+#> ✓ tibble  2.1.3          ✓ dplyr   0.8.3     
+#> ✓ tidyr   1.0.0          ✓ stringr 1.4.0     
+#> ✓ readr   1.3.1          ✓ forcats 0.4.0
+#> ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+#> x dplyr::filter() masks stats::filter()
+#> x dplyr::lag()    masks stats::lag()
 darkblue <- "#0072B2"
 theme_minimal_vline <- function() {
   list(

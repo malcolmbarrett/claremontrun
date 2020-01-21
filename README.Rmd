@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# claremontrun
+# claremontrun <img src='man/figures/logo.png' align="right" height="130" />
 
 <!-- badges: start -->
 <!-- badges: end -->
